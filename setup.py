@@ -19,7 +19,7 @@
 __author__ = 'api.sgrinberg@gmail.com (Stan Grinberg)'
 
 import os
-from distutils.core import setup
+from setuptools import setup
 
 from adspygoogle.dfp import LIB_AUTHOR
 from adspygoogle.dfp import LIB_NAME
@@ -32,6 +32,7 @@ PACKAGES = ['adspygoogle', 'adspygoogle.common', 'adspygoogle.common.https',
             'adspygoogle.SOAPpy', 'adspygoogle.SOAPpy.wstools']
 PACKAGE_DATA = {'adspygoogle.dfp': [os.path.join('data', '*')]}
 SCRIPTS = ['scripts/dfp_config.py']
+INSTALL_REQUIRES = ['zsi', 'fpconst', 'google-api-python-client']
 
 
 setup(name='adspygoogle.dfp',
@@ -45,4 +46,5 @@ setup(name='adspygoogle.dfp',
       scripts=SCRIPTS,
       packages=PACKAGES,
       package_data=PACKAGE_DATA,
+      install_requires=INSTALL_REQUIRES,
       platforms='any')
