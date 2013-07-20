@@ -30,8 +30,8 @@ from adspygoogle.dfp import LIB_VERSION
 PACKAGES = ['adspygoogle', 'adspygoogle.common', 'adspygoogle.common.https',
             'adspygoogle.common.soappy', 'adspygoogle.dfp',
             'adspygoogle.SOAPpy', 'adspygoogle.SOAPpy.wstools']
-PACKAGE_DATA = {'adspygoogle.dfp': [os.path.join('data', '*')]}
-SCRIPTS = ['scripts/dfp_config.py']
+PACKAGE_DATA = {'adspygoogle.dfp': ['data/*.csv']}
+SCRIPTS = ['scripts/dfp_config.py', 'scripts/adspygoogle_generate_refresh_token.py']
 INSTALL_REQUIRES = ['zsi', 'fpconst', 'google-api-python-client']
 
 
@@ -42,7 +42,7 @@ setup(name='adspygoogle.dfp',
       maintainer=LIB_AUTHOR,
       url=LIB_URL,
       license='Apache License 2.0',
-      long_description='For additional information, please see %s' % LIB_URL,
+      long_description='WARNING: PyPI release is unofficial. For official information, please see %s' % LIB_URL,
       scripts=SCRIPTS,
       packages=PACKAGES,
       package_data=PACKAGE_DATA,
